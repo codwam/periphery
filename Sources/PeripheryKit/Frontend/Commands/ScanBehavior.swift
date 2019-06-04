@@ -100,7 +100,13 @@ class ScanBehavior {
             let console = DiagnosisConsole(graph: graph)
             console.start()
         }
-
+        
+        NotificationCenter.default.post(name: .scanBehaviorMain, object: result, userInfo: nil)
+        
         return .success(())
     }
+}
+
+public extension Notification.Name {
+    static let scanBehaviorMain = Notification.Name("scanBehaviorMain")
 }
