@@ -3,7 +3,7 @@ import Foundation
 public class SourceGraph {
     private(set) var rootDeclarations: Set<Declaration> = []
     private(set) var rootReferences: Set<Reference> = []
-    private(set) var allDeclarations: Set<Declaration> = []
+    public private(set) var allDeclarations: Set<Declaration> = []
     private(set) var allReferences: Set<Reference> = []
     private(set) var markedDeclarations: Set<Declaration> = []
     private(set) var ignoredDeclarations: Set<Declaration> = []
@@ -22,7 +22,7 @@ public class SourceGraph {
             .subtracting(ignoredDeclarations)
     }
 
-    var referencedDeclarations: Set<Declaration> {
+    public var referencedDeclarations: Set<Declaration> {
         return markedDeclarations
             .union(retainedDeclarations)
             .subtracting(ignoredDeclarations)

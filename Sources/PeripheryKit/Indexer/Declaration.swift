@@ -18,7 +18,7 @@ public class Declaration: Entity, CustomStringConvertible {
         case paramFuncLocalProtocol
     }
 
-    enum Kind: String, RawRepresentable, CaseIterable {
+    public enum Kind: String, RawRepresentable, CaseIterable {
         case `associatedtype` = "source.lang.swift.decl.associatedtype"
         case `class` = "source.lang.swift.decl.class"
         case `enum` = "source.lang.swift.decl.enum"
@@ -166,16 +166,16 @@ public class Declaration: Entity, CustomStringConvertible {
     }
 
     public let location: SourceLocation
-    let kind: Kind
-    let usr: String
+    public let kind: Kind
+    public let usr: String
 
     var parent: Entity?
-    var attributes: Set<String> = []
+    public var attributes: Set<String> = []
     var declarations: Set<Declaration> = []
     var unusedParameters: Set<Declaration> = []
     var references: Set<Reference> = []
     var related: Set<Reference> = []
-    var name: String?
+    public var name: String?
     var structureAccessibility: Accessibility = .internal
     var analyzerHints: [Analyzer.Hint] = []
 
