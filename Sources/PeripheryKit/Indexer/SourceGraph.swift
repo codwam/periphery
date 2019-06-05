@@ -52,7 +52,7 @@ public class SourceGraph {
         return allDeclarationsByUsr[usr]
     }
 
-    func references(toUsr usr: String) -> Set<Reference> {
+    public func references(toUsr usr: String) -> Set<Reference> {
         return allReferencesByUsr[usr] ?? []
     }
 

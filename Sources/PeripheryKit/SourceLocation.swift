@@ -1,10 +1,10 @@
 import Foundation
 
 public struct SourceLocation {
-    let file: SourceFile
-    let line: Int64?
-    let column: Int64?
-    let offset: Int64?
+    public let file: SourceFile
+    public let line: Int64?
+    public let column: Int64?
+    public let offset: Int64?
 
     private var descriptionInternal: String = ""
     private var shortDescriptionInternal: String = ""

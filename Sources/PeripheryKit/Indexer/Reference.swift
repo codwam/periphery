@@ -1,4 +1,4 @@
-class Reference: Entity {
+public class Reference: Entity {
     enum Kind: String {
         case `associatedtype` = "source.lang.swift.ref.associatedtype"
         case `class` = "source.lang.swift.ref.class"
@@ -56,7 +56,7 @@ class Reference: Entity {
         }
     }
 
-    let location: SourceLocation
+    public let location: SourceLocation
     let kind: Kind
     let usr: String
 
@@ -64,7 +64,7 @@ class Reference: Entity {
     var declarations: Set<Declaration> = []
     var references: Set<Reference> = []
     var receiverUsr: String?
-    var name: String?
+    public var name: String?
     var isRelated: Bool = false
 
     init(kind: Kind, usr: String, location: SourceLocation) {
@@ -102,7 +102,7 @@ extension Reference: Hashable {
 }
 
 extension Reference: Equatable {
-    static func == (lhs: Reference, rhs: Reference) -> Bool {
+    public static func == (lhs: Reference, rhs: Reference) -> Bool {
         let usrIsEqual = lhs.usr == rhs.usr
         let locationIsEqual = lhs.location == rhs.location
         let kindIsEqual = lhs.kind == rhs.kind
@@ -119,7 +119,7 @@ extension Reference: Equatable {
 }
 
 extension Reference: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         let referenceType = isRelated ? "Related" : "Reference"
 
         return "\(referenceType)(\(descriptionParts.joined(separator: ", ")))"

@@ -2,7 +2,7 @@ import Foundation
 import PathKit
 
 public struct SourceFile {
-    let path: Path
+    public let path: Path
 
     init(path: Path) {
         self.path = path
