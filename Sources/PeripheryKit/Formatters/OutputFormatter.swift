@@ -1,17 +1,17 @@
 import Foundation
 
-enum OutputFormat: String, CustomStringConvertible {
+public enum OutputFormat: String, CustomStringConvertible {
     case xcode
     case csv
     case json
 
-    static let `default` = OutputFormat.xcode
+    public static let `default` = OutputFormat.xcode
 
     static var allCases: [OutputFormat] {
         return [.xcode, .csv, .json]
     }
 
-    static func make(named name: String) throws -> OutputFormat {
+    public static func make(named name: String) throws -> OutputFormat {
         guard let outputFormat = OutputFormat(rawValue: name) else {
             throw PeripheryKitError.invalidFormatter(name: name)
         }
@@ -35,7 +35,7 @@ enum OutputFormat: String, CustomStringConvertible {
         return false
     }
 
-    var description: String {
+    public var description: String {
         switch self {
         case .xcode:
             return "Xcode"

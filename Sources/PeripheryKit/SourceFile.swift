@@ -4,7 +4,7 @@ import PathKit
 public struct SourceFile {
     public let path: Path
 
-    init(path: Path) {
+    public init(path: Path) {
         self.path = path
     }
 }
