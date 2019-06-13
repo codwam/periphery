@@ -57,7 +57,7 @@ public class Shell: Injectable {
     }
 
     @discardableResult
-    func exec(_ args: [String], stderr: Bool = true, env: [String: String] = ProcessInfo.processInfo.environment) throws -> String {
+    public func exec(_ args: [String], stderr: Bool = true, env: [String: String] = ProcessInfo.processInfo.environment) throws -> String {
         let task = Process()
         task.environment = env
         task.launchPath = "/usr/bin/env"
