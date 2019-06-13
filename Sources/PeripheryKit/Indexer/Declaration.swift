@@ -169,12 +169,12 @@ public class Declaration: Entity, CustomStringConvertible {
     public let kind: Kind
     public let usr: String
 
-    var parent: Entity?
+    public var parent: Entity?
     public var attributes: Set<String> = []
-    var declarations: Set<Declaration> = []
+    public var declarations: Set<Declaration> = []
     var unusedParameters: Set<Declaration> = []
-    var references: Set<Reference> = []
-    var related: Set<Reference> = []
+    public var references: Set<Reference> = []
+    public var related: Set<Reference> = []
     public var name: String?
     var structureAccessibility: Accessibility = .internal
     var analyzerHints: [Analyzer.Hint] = []

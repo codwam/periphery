@@ -1,6 +1,6 @@
 import Foundation
 
-protocol Entity: CustomStringConvertible {
+public protocol Entity: CustomStringConvertible {
     var location: SourceLocation { get }
     var declarations: Set<Declaration> { get set }
     var references: Set<Reference> { get set }

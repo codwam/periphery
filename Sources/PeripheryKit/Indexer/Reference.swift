@@ -58,11 +58,11 @@ public class Reference: Entity {
 
     public let location: SourceLocation
     let kind: Kind
-    let usr: String
+    public let usr: String
 
-    var parent: Entity?
-    var declarations: Set<Declaration> = []
-    var references: Set<Reference> = []
+    public var parent: Entity?
+    public var declarations: Set<Declaration> = []
+    public var references: Set<Reference> = []
     var receiverUsr: String?
     public var name: String?
     var isRelated: Bool = false
