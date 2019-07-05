@@ -1,5 +1,5 @@
 public class Reference: Entity {
-    enum Kind: String {
+    public enum Kind: String {
         case `associatedtype` = "source.lang.swift.ref.associatedtype"
         case `class` = "source.lang.swift.ref.class"
         case `enum` = "source.lang.swift.ref.enum"
@@ -43,7 +43,7 @@ public class Reference: Entity {
             return rawValue.hasPrefix("source.lang.swift.ref.function")
         }
 
-        var shortName: String {
+        public var shortName: String {
             let namespace = "source.lang.swift.ref"
             let index = rawValue.index(after: namespace.endIndex)
 
@@ -57,7 +57,7 @@ public class Reference: Entity {
     }
 
     public let location: SourceLocation
-    let kind: Kind
+    public let kind: Kind
     public let usr: String
 
     public var parent: Entity?
